@@ -6,7 +6,8 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class QuickstartConsumer {
-    @Reference(url = "dubbo://localhost:20880")
+//    @Reference(url = "dubbo://localhost:20880")直连用这个
+    @Reference(interfaceClass = ServiceAPI.class)
     private ServiceAPI serviceAPI;
 
     public void sendMessage(String message){
